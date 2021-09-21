@@ -16,8 +16,8 @@ import javax.ws.rs.core.Response;
 
 import static javax.ws.rs.core.Response.Status.CREATED;
 
-@Path("/v1/cliente")
-@Tag(name = "Cliente")
+@Path("/v1/customers")
+@Tag(name = "Customer")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class CustomerController implements CustomerOpenApi {

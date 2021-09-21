@@ -17,3 +17,10 @@ mp:
         value:
           serializer: io.quarkus.kafka.client.serialization.ObjectMapperSerializer
         merge: true
+
+"%test":
+  mp:
+    messaging:
+      outgoing:
+        customer-out:
+          connector: smallrye-kafka

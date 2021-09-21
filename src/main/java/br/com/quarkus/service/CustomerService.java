@@ -1,5 +1,6 @@
 package br.com.quarkus.service;
 
+import br.com.quarkus.payload.request.CustomerMessage;
 import br.com.quarkus.payload.request.CustomerRequest;
 import lombok.RequiredArgsConstructor;
 import org.eclipse.microprofile.reactive.messaging.Channel;
@@ -14,9 +15,13 @@ public class CustomerService {
 
     @Inject
     @Channel("customer-out")
-    Emitter<CustomerRequest> emitter;
+    Emitter<CustomerMessage> emitter;
 
     public void create(CustomerRequest request) {
-        emitter.send(request);
+        CustomerMessage message = CustomerMessage.builder()
+                .customerRequest(request)
+                .action("bff message")
+                .build();
+        emitter.send(message);
     }
 }
