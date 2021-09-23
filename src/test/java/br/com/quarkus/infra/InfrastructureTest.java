@@ -2,13 +2,14 @@ package br.com.quarkus.infra;
 
 import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 import org.testcontainers.containers.KafkaContainer;
+import org.testcontainers.utility.DockerImageName;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class InfrastructureTest implements QuarkusTestResourceLifecycleManager {
 
-    static KafkaContainer kafka = new KafkaContainer();
+    static KafkaContainer kafka = new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:5.4.3"));
 
     @Override
     public Map<String, String> start() {
