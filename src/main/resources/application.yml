@@ -3,15 +3,6 @@ quarkus:
     port: 8087
   swagger-ui:
     path: /api
-  kubernetes:
-    part-of: quarkus-kafka-bjj
-    image-pull-policy: never
-    service-type: NodePort
-  container-image:
-    registry:
-    group: jimmmisss
-    name: bjj
-    tag: 1.0-SNAPSHOT
 
 kafka:
   bootstrap:

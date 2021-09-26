@@ -9,4 +9,5 @@ public class CustomerMessage {
 
     private CustomerRequest customerRequest;
     private String action;
+    private String dateHour;
 }
