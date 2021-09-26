@@ -3,6 +3,10 @@ quarkus:
     port: 8087
   swagger-ui:
     path: /api
+    always-include: true 
+
+  native:
+    additional-build-args: -H:ReflectionConfigurationFiles=reflection-config.json
 
 kafka:
   bootstrap:
