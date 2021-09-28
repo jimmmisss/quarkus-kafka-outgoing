@@ -23,7 +23,7 @@ public class CustomerService {
         CustomerMessage message = CustomerMessage.builder()
                 .customerRequest(request)
                 .action("bff message")
-                .dateHour(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime()))
+                .dateHour(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime()))
                 .build();
         emitter.send(message);
     }
